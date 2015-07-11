@@ -13,7 +13,6 @@
 /* Begin PBXFileReference section */
 		7DF79B9A1B5157C000BF9B54 /* ImageStream.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageStream.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF79BA11B5157C000BF9B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DF79BA71B51A43300BF9B54 /* ImageStream-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageStream-Bridging-Header.h"; sourceTree = "<group>"; };
 		7DF79BA81B51A43300BF9B54 /* ImageStreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStreamView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +48,6 @@
 			children = (
 				7DF79BA11B5157C000BF9B54 /* Info.plist */,
 				7DF79BA81B51A43300BF9B54 /* ImageStreamView.swift */,
-				7DF79BA71B51A43300BF9B54 /* ImageStream-Bridging-Header.h */,
 			);
 			path = ImageStream;
 			sourceTree = "<group>";
@@ -226,7 +224,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yomajkel.ImageStream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ImageStream/ImageStream-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = saver;
 			};
@@ -242,7 +239,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yomajkel.ImageStream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ImageStream/ImageStream-Bridging-Header.h";
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
