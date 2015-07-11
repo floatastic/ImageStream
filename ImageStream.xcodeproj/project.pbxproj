@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DF79B9E1B5157C000BF9B54 /* ImageStreamView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DF79B9D1B5157C000BF9B54 /* ImageStreamView.h */; };
-		7DF79BA01B5157C000BF9B54 /* ImageStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF79B9F1B5157C000BF9B54 /* ImageStreamView.m */; };
+		7DF79BA91B51A43300BF9B54 /* ImageStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF79BA81B51A43300BF9B54 /* ImageStreamView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7DF79B9A1B5157C000BF9B54 /* ImageStream.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageStream.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DF79B9D1B5157C000BF9B54 /* ImageStreamView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStreamView.h; sourceTree = "<group>"; };
-		7DF79B9F1B5157C000BF9B54 /* ImageStreamView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageStreamView.m; sourceTree = "<group>"; };
 		7DF79BA11B5157C000BF9B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DF79BA71B51A43300BF9B54 /* ImageStream-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageStream-Bridging-Header.h"; sourceTree = "<group>"; };
+		7DF79BA81B51A43300BF9B54 /* ImageStreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStreamView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +47,9 @@
 		7DF79B9C1B5157C000BF9B54 /* ImageStream */ = {
 			isa = PBXGroup;
 			children = (
-				7DF79B9D1B5157C000BF9B54 /* ImageStreamView.h */,
-				7DF79B9F1B5157C000BF9B54 /* ImageStreamView.m */,
 				7DF79BA11B5157C000BF9B54 /* Info.plist */,
+				7DF79BA81B51A43300BF9B54 /* ImageStreamView.swift */,
+				7DF79BA71B51A43300BF9B54 /* ImageStream-Bridging-Header.h */,
 			);
 			path = ImageStream;
 			sourceTree = "<group>";
@@ -62,7 +61,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF79B9E1B5157C000BF9B54 /* ImageStreamView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +91,7 @@
 		7DF79B911B5157C000BF9B54 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = yomajkel;
 				TargetAttributes = {
@@ -133,7 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF79BA01B5157C000BF9B54 /* ImageStreamView.m in Sources */,
+				7DF79BA91B51A43300BF9B54 /* ImageStreamView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,11 +219,15 @@
 		7DF79BA51B5157C000BF9B54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ImageStream/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yomajkel.ImageStream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ImageStream/ImageStream-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -232,11 +235,14 @@
 		7DF79BA61B5157C000BF9B54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ImageStream/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yomajkel.ImageStream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ImageStream/ImageStream-Bridging-Header.h";
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
