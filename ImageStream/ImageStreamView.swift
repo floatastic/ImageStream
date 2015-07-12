@@ -11,12 +11,16 @@ import ScreenSaver
 
 class ImageStreamView: ScreenSaverView {
     
+    var image: NSImage?
+    
     override init?(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
+        loadImage()
     }
 
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        loadImage()
     }
 
     override func startAnimation() {
@@ -28,7 +32,17 @@ class ImageStreamView: ScreenSaverView {
     }
     
     override func drawRect(rect: NSRect) {
-        super.drawRect(rect)
+//        super.drawRect(rect)
+        
+        let context: CGContextRef = NSGraphicsContext.currentContext()!.CGContext
+        CGContextSetFillColorWithColor(context, NSColor.blueColor().CGColor);
+        CGContextSetAlpha(context, 0.9);
+        CGContextFillRect(context, rect);
+        
+//        if let image = image {
+//            let point = CGPoint(x: (frame.size.width - image.size.width) / 2, y: (frame.size.height - image.size.height) / 2)
+//            image.drawAtPoint(point, fromRect: NSZeroRect, operation: .CompositeSourceOver, fraction: 1)
+//        }
     }
     
     override func animateOneFrame() {
@@ -42,4 +56,13 @@ class ImageStreamView: ScreenSaverView {
     override func configureSheet() -> NSWindow? {
         return nil
     }
+    
+    func loadImage() {
+        let url = NSURL(string: "https://raw.githubusercontent.com/yomajkel/ImageStream/master/ImageStream/swift.png")
+        let data = NSData(contentsOfURL: url!)
+        if let data = data {
+            image = NSImage(data: data)
+        }
+    }
+    
 }
