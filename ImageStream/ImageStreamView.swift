@@ -32,17 +32,10 @@ class ImageStreamView: ScreenSaverView {
     }
     
     override func drawRect(rect: NSRect) {
-//        super.drawRect(rect)
-        
-        let context: CGContextRef = NSGraphicsContext.currentContext()!.CGContext
-        CGContextSetFillColorWithColor(context, NSColor.blueColor().CGColor);
-        CGContextSetAlpha(context, 0.9);
-        CGContextFillRect(context, rect);
-        
-//        if let image = image {
-//            let point = CGPoint(x: (frame.size.width - image.size.width) / 2, y: (frame.size.height - image.size.height) / 2)
-//            image.drawAtPoint(point, fromRect: NSZeroRect, operation: .CompositeSourceOver, fraction: 1)
-//        }
+        if let image = image {
+            let point = CGPoint(x: (frame.size.width - image.size.width) / 2, y: (frame.size.height - image.size.height) / 2)
+            image.drawAtPoint(point, fromRect: NSZeroRect, operation: .CompositeSourceOver, fraction: 1)
+        }
     }
     
     override func animateOneFrame() {
@@ -58,10 +51,13 @@ class ImageStreamView: ScreenSaverView {
     }
     
     func loadImage() {
-        let url = NSURL(string: "https://raw.githubusercontent.com/yomajkel/ImageStream/master/ImageStream/swift.png")
-        let data = NSData(contentsOfURL: url!)
-        if let data = data {
-            image = NSImage(data: data)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let url = NSURL(string: "https://raw.githubusercontent.com/yomajkel/ImageStream/added-swift-image/assets/swift.png")
+            let data = NSData(contentsOfURL: url!)
+            if let data = data {
+                self.image = NSImage(data: data)
+                self.needsDisplay = true
+            }
         }
     }
     

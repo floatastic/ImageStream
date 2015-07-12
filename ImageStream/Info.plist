@@ -23,6 +23,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2015 yomajkel. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string>ImageStream.ImageStreamView</string>
+	<string>ImageStreamView</string>
 </dict>
 </plist>
