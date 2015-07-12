@@ -32,6 +32,11 @@ class ImageStreamView: ScreenSaverView {
     }
     
     override func drawRect(rect: NSRect) {
+        let context: CGContextRef = NSGraphicsContext.currentContext()!.CGContext
+        CGContextSetFillColorWithColor(context, NSColor.blackColor().CGColor);
+        CGContextSetAlpha(context, 1);
+        CGContextFillRect(context, rect);
+        
         if let image = image {
             let point = CGPoint(x: (frame.size.width - image.size.width) / 2, y: (frame.size.height - image.size.height) / 2)
             image.drawAtPoint(point, fromRect: NSZeroRect, operation: .CompositeSourceOver, fraction: 1)
